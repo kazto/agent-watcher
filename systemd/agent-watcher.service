@@ -1,0 +1,15 @@
+[Unit]
+Description=agent-watcher (agent-gateway session watcher)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Adjust paths to your install. The watcher keeps its state files in
+# ~/.config/agent-watcher (create watch.json there first).
+ExecStart=%h/.cargo/bin/agent-watcher --gateway-url http://localhost:3000 --dir %h/.config/agent-watcher
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
