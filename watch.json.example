@@ -1,0 +1,5 @@
+{
+  "sessions": [
+    {"id": "<agent-gateway session id>", "name": "my-agent", "quiet_seconds": 120}
+  ]
+}
